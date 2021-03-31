@@ -1,0 +1,39 @@
+syntax="proto3";
+
+package todoPackage;
+
+service Todo {
+      
+      rpc joinGame (JoinRequestGame) returns (joinRequestGameReply);
+
+      rpc getBoard(voidNoParam) returns (getBoardReply);
+      rpc setLocation (setLocationRequest) returns (setLocationReply);
+
+}
+
+message voidNoParam {}
+
+
+
+
+
+message JoinRequestGame {
+      string chessKind = 1;
+      string id = 2;
+}
+message joinRequestGameReply {
+      string description = 1;
+      string gameStatus = 2;
+}
+
+message getBoardReply{
+      string board = 1;
+}
+
+message setLocationRequest {
+      string location = 1;
+      string chessKind = 2;
+}
+message setLocationReply {
+      string status = 1;
+}
